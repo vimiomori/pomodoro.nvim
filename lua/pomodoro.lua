@@ -58,12 +58,12 @@ end
 
 function Pomodoro.statusline()
     if pomodoro_state == 'stopped' then
-        return 'ﮫ (inactive)'
+        return '󱫪 '
     elseif pomodoro_state == 'started' then
-        return '羽' .. pomodoro_time_remaining(vim.g.pomodoro_time_work, pomodoro_work_started_at)
+        return ' ' .. pomodoro_time_remaining(vim.g.pomodoro_time_work, pomodoro_work_started_at)
     else
         local break_minutes = pomodoro_time_break()
-        return 'ﲊ ' .. pomodoro_time_remaining(break_minutes, pomodoro_break_started_at)
+        return ' ' .. pomodoro_time_remaining(break_minutes, pomodoro_break_started_at)
     end
 end
 
